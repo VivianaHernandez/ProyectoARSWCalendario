@@ -19,16 +19,21 @@ angular.element(document).ready(function () {
                     });     
                 }
         );
-    };     
+    };    
+    
+    
+    
     // Callback function to be called when stomp client could not connect to server
     var errorCallback = function (error) {
         alert(error.headers.message);
     };
     // Connect to server via websocket
+    
+      
+    
     stompClient.connect("guest", "guest", connectCallback, errorCallback);  
     
-    var jsonstr = JSON.stringify({"destiny": "servidor", "body":"acuse de recibo"});
-    stompClient.send("/app/newmessage", {},jsonstr);
+   
     
 
     

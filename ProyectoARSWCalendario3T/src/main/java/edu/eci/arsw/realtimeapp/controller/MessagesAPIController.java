@@ -1,6 +1,6 @@
 package edu.eci.arsw.realtimeapp.controller;
 
-import edu.eci.arsw.realtimeapp.model.Tarea;
+import edu.eci.arsw.realtimeapp.model.Message;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ public class MessagesAPIController {
     private SimpMessagingTemplate template;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<?> addProduct(@RequestBody Tarea p) {
+    public ResponseEntity<?> addProduct(@RequestBody Message p) {
         template.convertAndSend("/topic/newmessage", p);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
@@ -33,7 +33,7 @@ public class MessagesAPIController {
     }
 
     @MessageMapping("/messages")
-    public void webSocketMsgHandler(Tarea m) {
+    public void webSocketMsgHandler(Message m) {
    
      System.out.println(m);
     }

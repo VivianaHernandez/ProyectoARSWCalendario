@@ -21,9 +21,10 @@
         <div id="control" ng-controller="controlador as cn">
             <center>
                 
-                Fecha: <input  type="date" ng-model="cn.fecha"><br><br>
+                Fecha: <input  type="date" ng-model="fecha"><br><br>
                 
-                 <button class="btn btn-success" ng-click="cn.guardar()">Guardar</button>
+
+            <button class="btn btn-success"  ng-click="enviarFecha()" >Enviar</button>
             </center>
         </div>
 

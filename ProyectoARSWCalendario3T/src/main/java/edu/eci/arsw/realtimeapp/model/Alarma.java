@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
-public class Alarma implements Serializable{
+public class Alarma {
 
     private Date fechaTarea;
     private boolean activo;
