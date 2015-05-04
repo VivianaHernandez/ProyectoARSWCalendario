@@ -1,6 +1,6 @@
 angular.element(document).ready(function () {
     //Create stomp client over sockJS protocol
-    var socket = new SockJS("/websocketsdemo/sockets/ws");
+    var socket = new SockJS("/ProyectoARSWCalendario3T/sockets/ws");
     var stompClient = Stomp.over(socket);
     
     // Callback function to be called when stomp client is connected to server
@@ -13,9 +13,10 @@ angular.element(document).ready(function () {
                     
                     var controllerElement = document.getElementById("control");
                     var controllerScope = angular.element(controllerElement).scope();             
-                    
+                     alert('Entro');
                     controllerScope.$apply(function() {
                     controllerScope.cuerpo="\n"+controllerScope.cuerpo+message.destiny + "," + message.body+"\n";
+                    alert('Entro=)');
                     });     
                 }
         );
@@ -33,7 +34,8 @@ angular.element(document).ready(function () {
     
     stompClient.connect("guest", "guest", connectCallback, errorCallback);  
     
-   
+    var jsonstr = JSON.stringify({"destiny": "servidor", "body":"acuse de recibo"});
+    stompClient.send("/app/newmessage", {},jsonstr);
     
 
     

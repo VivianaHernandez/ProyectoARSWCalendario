@@ -2,13 +2,13 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" ng-app="modone"> <!--<![endif]-->
 <head>
 
     <!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>zBoomMusic Free Html5 Responsive Template</title>
+	<title>Calendario Compartido</title>
 	<meta name="description" content="Free Html5 Templates and Free Responsive Themes Designed by Kimmy | zerotheme.com">
 	<meta name="author" content="www.zerotheme.com">
 	
@@ -84,6 +84,18 @@
 	</div>
 </nav>
 
+ <!-- Angular.js -->
+        <script src="js/libs/angular.min.js"></script>
+        <script src="js/libs/angular-route.js"></script>
+        <script src="js/libs/appmodule.js"></script>
+
+        <!-- Sock.js && Stomp for Websockets libraries -->
+        <script src="js/libs/sockjs-0.3.min.js"></script>
+        <script src="js/libs/stomp.js"></script>
+
+        <script src="js/libs/websockmodule.js"></script>
+
+
 <!--------------Content--------------->
 <section id="content">
 	<div class="wrap-content zerogrid">
@@ -91,21 +103,22 @@
 			<div class="col-2-1">
 				<div class="wrap-col">
 					<article>
-						<div class="comment">
+						<div class="comment" ng-controller="controlador as cn">
 							<center><form>
                                                                 <p>Fecha</p>
-                                                                <div><input type="date" name="fecha" id="fechal"></div>	
+                                                                <div><input type="date" name="fecha" id="fechal" ng-model="fecha"></div>	
                                                                 <p>Grupo</p>
-                                                                <div><input type="text" name="grupo" id="grupo"></div>	
+                                                                <div><input type="text" name="grupo" id="grupo" ng-model="grupo"></div>	
                                                                 <p>Nombre</p>
-                                                                <div><input type="text" name="nombre" id="nombre"></div>
+                                                                <div><input type="text" name="nombre" id="nombre" ng-model="nombre"></div>
                                                                 <p>Descripcion</p>
-                                                                <div><input type="text" name="descripcion" id="descripcion"></div>
+                                                                <div><input type="text" name="descripcion" id="descripcion" ng-model="descripcion"></div>
+                                                                
+                                                                      <textarea  ng-model="cuerpo" readonly></textarea><br>
+                                                                
 								<div><button class="btn btn-success"  ng-click="enviar()" >Enviar</button></div>
                                                                 
-                                                          
-                                                                
-                                                                
+                                                   
 							</form></center>
 						</div>
 					</article>
