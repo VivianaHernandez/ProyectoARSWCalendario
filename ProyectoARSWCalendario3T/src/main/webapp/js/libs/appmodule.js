@@ -4,6 +4,7 @@
          $scope.grupo="";
          $scope.nombre="";
          $scope.descripcion="";
+         $scope.fecha="";
            
         $scope.cuerpo="";
         $scope.destino="";

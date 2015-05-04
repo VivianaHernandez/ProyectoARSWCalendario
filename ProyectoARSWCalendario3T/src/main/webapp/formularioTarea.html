@@ -4,7 +4,7 @@
         <title>Web sockets demo</title>
     </head>
      <body style="background-color:#428CC3;">
-        <h1>Formulario</h1>
+          <center><h1>Formulario</h1></center>
 
         <!-- Angular.js -->
         <script src="js/libs/angular.min.js"></script>
@@ -19,12 +19,11 @@
 
         <div id="control" ng-controller="controlador as cn">
       <center>
+           
+            Fecha: <input  type="date" ng-model="fecha"><br><br>
             Grupo: <input type="text" name="grupo" ng-model="grupo"><br><br>
             Nombre: <input type="text" name="nombre" ng-model="nombre"><br><br>
             Descripcion: <input type="text" name="descripcion" ng-model="descripcion"><br><br>  
-            
-        
-
             <button class="btn btn-success"  ng-click="enviar()" >Enviar</button>
           </center>
 
