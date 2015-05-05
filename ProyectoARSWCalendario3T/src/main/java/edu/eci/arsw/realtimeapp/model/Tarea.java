@@ -13,7 +13,6 @@ import java.util.Date;
  */
 public class Tarea {
     
-    private String grupo;
     private String nombre;
     private String descripcion;
     private Date fecha;
@@ -23,7 +22,10 @@ public class Tarea {
         this.descripcion =descripcion;
         this.fecha=fecha;
     }
-    
+
+    public Tarea(String grupo1, Tarea[] tarea) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public String getNombre() {
         return nombre;
     }
@@ -46,17 +48,5 @@ public class Tarea {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
-    }
-    
-    public String getGrupo() {
-        return grupo;
-    }
-
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
-    }
-
-   
-
-    
+    }    
 }
