@@ -26,8 +26,6 @@ public class Grupo {
         return name;
     }
 
-    
-    
     public List<Tarea> getTarea() {
         return tareas;
     }
