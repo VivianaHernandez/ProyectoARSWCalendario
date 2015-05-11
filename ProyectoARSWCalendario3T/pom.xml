@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>edu.eci.arsw.websocketsdemo</groupId>
+  <groupId>edu.eci.cosw</groupId>
   <artifactId>ProyectoARSWCalendario3T</artifactId>
   <name>ProyectoARSWCalendario3T</name>
   <packaging>war</packaging>
@@ -146,3 +146,6 @@
     </plugins>
   </build>
 </project>
+
+
+

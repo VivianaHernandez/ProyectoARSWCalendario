@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.arsw.realtimeapp.model;
+
+package edu.eci.cosw.samples.model;
 
 import java.util.ArrayList;
 

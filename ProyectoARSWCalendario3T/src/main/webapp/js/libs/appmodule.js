@@ -1,27 +1,23 @@
 (function () {
-    var app = angular.module('modone', ['ngRoute']);
-    app.controller('controlador', function($scope, $http){
-        $scope.cuerpo="";
-        $scope.destino="";
-        $scope.mensajes="";
-        $scope.grupo="";
-        $scope.nombre="";
-        $scope.fecha=new Date();
-        $scope.descripcion="";
-        
-        
-        $scope.enviar=function(){
-            $http.post('rest/messages', {"destiny":$scope.nombre,"body":$scope.descripcion}).
-            success(function(data){alert('Hizo Peticion =)')});
-        }
-         
-    });
+    var app = angular.module('modone', []);
+
+    app.controller('controlregistro',
+            function ($scope, $http) {
+                this.nombre = "";
+                $scope.arreglo = [];
+                this.consulta = function () {
+                    $http.get('rest/blueprints').
+                            success(function (data) {
+                                alert('Satisfactorio=)');
+                                $scope.arreglo=data;
+                            }).
+                            error(function (data) {
+                                alert('Error');
+                            });
+                    
+                };
+                
+            }
+    );
+
 })();
-
-
-
-
-
-
-
-
