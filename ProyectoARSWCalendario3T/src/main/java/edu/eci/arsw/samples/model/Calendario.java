@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package edu.eci.cosw.samples.model;
+package edu.eci.arsw.samples.model;
 
 import java.util.ArrayList;
 

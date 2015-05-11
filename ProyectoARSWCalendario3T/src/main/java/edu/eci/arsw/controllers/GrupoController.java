@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.cosw.controllers;
+package edu.eci.arsw.controllers;
 
-import edu.eci.cosw.samples.model.Blueprint;
-import edu.eci.cosw.samples.model.Grupo;
-import edu.eci.cosw.services.ServicesFacade;
+
+import edu.eci.arsw.samples.model.Grupo;
+import edu.eci.arsw.services.ServicesFacade;
 import java.util.List;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author hcadavid
  */
 @RestController
-@RequestMapping("/blueprints")
+@RequestMapping("/grupos")
 public class GrupoController {
     
     @Autowired
@@ -48,9 +48,9 @@ public class GrupoController {
         return services.getGrupoNames();
     }
     
-    @RequestMapping(value = "/{blueprintname}",method = RequestMethod.GET)        
-    public Grupo getABlueprint(@PathVariable("blueprintname") String blueprintname) {       
-        return services.getGrupoByName(blueprintname);
+    @RequestMapping(value = "/{gruponame}",method = RequestMethod.GET)        
+    public Grupo getABlueprint(@PathVariable("gruponame") String gruponame) {       
+        return services.getGrupoByName(gruponame);
     }
 
     

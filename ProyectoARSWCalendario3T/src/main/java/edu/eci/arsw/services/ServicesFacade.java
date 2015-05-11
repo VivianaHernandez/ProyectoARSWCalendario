@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.cosw.services;
+package edu.eci.arsw.services;
 
-import edu.eci.cosw.samples.model.Blueprint;
-import edu.eci.cosw.samples.model.Grupo;
-import edu.eci.cosw.samples.model.Point;
-import edu.eci.cosw.samples.model.Tarea;
+import edu.eci.arsw.samples.model.Grupo;
+import edu.eci.arsw.samples.model.Tarea;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -24,8 +22,8 @@ public class ServicesFacade {
     private static final Map<String,Grupo> dummyBluePrints=new LinkedHashMap<>();
     
     static{
-        dummyBluePrints.put("Grupo1",new Grupo("grupo1",new Tarea[]{new Tarea("t1","de1",null),new Tarea("t11","de1",null)}));
-        dummyBluePrints.put("Grupo2",new Grupo("grupo2",new Tarea[]{new Tarea("t2","de1",null),new Tarea("t21","de1",null)}));
+        dummyBluePrints.put("Grupo1",new Grupo("grupo1",new Tarea[]{new Tarea("t1","de1",null),new Tarea("t11","de11",null)}));
+        dummyBluePrints.put("Grupo2",new Grupo("grupo2",new Tarea[]{new Tarea("t2","de2",null),new Tarea("t21","de21",null)}));
         dummyBluePrints.put("grupo3", new Grupo("grupo3",new Tarea[]{new Tarea("t3","de3",null),new Tarea("t31","de31",null)}));
     }
     

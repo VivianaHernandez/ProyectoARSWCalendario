@@ -6,7 +6,7 @@
                 this.nombre = "";
                 $scope.arreglo = [];
                 this.consulta = function () {
-                    $http.get('rest/blueprints').
+                    $http.get('rest/grupos').
                             success(function (data) {
                                 alert('Satisfactorio=)');
                                 $scope.arreglo=data;
