@@ -14,7 +14,6 @@
                             error(function (data) {
                                 alert('Error');
                             });
-                    
                 };
                 
             }
