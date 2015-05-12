@@ -2,7 +2,7 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" ng-app="modone"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
 
     <!-- Basic Page Needs
@@ -57,6 +57,8 @@
 	<div class="wrap-header zerogrid">
 		<div id="logo"><a href="#"><img src="./images/logo.png"/></a></div>
 		
+		
+                
 	</div>
 </header>
 
@@ -64,68 +66,70 @@
 	<div class="wrap-nav zerogrid">
 		<div class="menu">
 			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li class="current"><a href="contact.html">Crear Tarea</a></li>
-                                <li><a href="gallery.html">Consultar Tarea</a></li>
-				<li><a href="single.html">Documento</a></li>
-				
+                            <li class="current"><a href="portada.html">Portada</a></li> 
+                            <li><a href="inicio.html">Inicio</a></li>                               
+                            <li><a href="formulario.html">Crear Tarea</a></li>
+                            <li><a href="consulta.html">Consultar Tarea</a></li>
+                            <li><a href="documento.html">Documento</a></li>
+                            
 			</ul>
 		</div>
 		
 		<div class="minimenu"><div>MENU</div>
 			<select onchange="location=this.value">
 				<option></option>
-				<option value="index.html">Inicio</option>
-				<option value="contact.html">Crear tarea</option>
-				<option value="gallery.html">Consultar Tarea</option>
-				<option value="single.html">Documento</option>
+                                <option value="portada.html">Portada</option>
+				<option value="inicio.html">Inicio</option>
+				<option value="formulario.html">Crear tarea</option>
+				<option value="consulta.html">Consultar Tarea</option>
+				<option value="documento.html">Documento</option>
 			</select>
 		</div>		
 	</div>
 </nav>
 
- <!-- Angular.js -->
-        <script src="js/libs/angular.min.js"></script>
-        <script src="js/libs/angular-route.js"></script>
-        <script src="js/libs/appmodule.js"></script>
-
-        <!-- Sock.js && Stomp for Websockets libraries -->
-        <script src="js/libs/sockjs-0.3.min.js"></script>
-        <script src="js/libs/stomp.js"></script>
-
-        <script src="js/libs/websockmodule.js"></script>
-
+<div class="featured">
+	<div class="wrap-featured zerogrid">
+		<div class="slider">
+			<div class="rslides_container">
+				<ul class="rslides" id="slider">
+					<li><img src="images/slide1.jpg"/></li>
+					<li><img src="images/slide2.jpg"/></li>
+					<li><img src="images/slide3.jpg"/></li>
+                                        <li><img src="images/slide4.jpg"/></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
 
 <!--------------Content--------------->
 <section id="content">
 	<div class="wrap-content zerogrid">
-		<div class="row block03">
-			<div class="col-2-1">
-				<div class="wrap-col">
-					<article>
-						<div class="comment" ng-controller="controlador as cn">
-							<center><form>
-                                                                <p>Fecha</p>
-                                                                <div><input type="date" name="fecha" id="fechal" ng-model="fecha"></div>	
-                                                                <p>Grupo</p>
-                                                                <div><input type="text" name="grupo" id="grupo" ng-model="grupo"></div>	
-                                                                <p>Nombre</p>
-                                                                <div><input type="text" name="nombre" id="nombre" ng-model="nombre"></div>
-                                                                <p>Descripcion</p>
-                                                                <div><input type="text" name="descripcion" id="descripcion" ng-model="descripcion"></div>
-                                                                
-                                                                      <textarea  ng-model="cuerpo" readonly></textarea><br>
-                                                                
-								<div><button class="btn btn-success"  ng-click="enviar()" >Enviar</button></div>
-                                                                
-                                                   
-							</form></center>
-						</div>
-					</article>
+		<div class="row block01">
+			<div class="col-1-3">
+				<div class="wrap-col box">
+					<h2>Funcionalidad 1</h2>
+					<p>Calendario Compartido</p>
+					
 				</div>
 			</div>
-			
+			<div class="col-1-3">
+				<div class="wrap-col box">
+					<h2>Funcionalidad 2</h2>
+					<p>Alarma para Tareas</p>
+					
+				</div>
+			</div>
+			<div class="col-1-3">
+				<div class="wrap-col box">
+					<h2>Funcionalidad 3</h2>
+					<p>Documento compartido</p>
+					
+				</div>
+			</div>
 		</div>
+		
 	</div>
 </section>
 <!--------------Footer--------------->
@@ -164,5 +168,7 @@
 		
 	</div>
 </footer>
+
+
 
 </body></html>

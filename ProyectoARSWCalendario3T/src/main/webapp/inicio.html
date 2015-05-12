@@ -2,13 +2,14 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" ng-app="modone"> <!--<![endif]-->
 <head>
 
     <!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>zBoomMusic Free Html5 Responsive Template</title>
+	<title>Inicio</title>
 	<meta name="description" content="Free Html5 Templates and Free Responsive Themes Designed by Kimmy | zerotheme.com">
 	<meta name="author" content="www.zerotheme.com">
 	
@@ -20,7 +21,7 @@
   ================================================== -->
   	<link rel="stylesheet" href="css/zerogrid.css">
 	<link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="css/responsiveslides.css" />
 	
 	<!--[if lt IE 8]>
@@ -50,6 +51,18 @@
 		  });
 		});
 	</script>
+        
+        
+        <script src="js/libs/angular.min.js"></script>
+        <script src="js/libs/angular-route.js"></script>
+        <script src="js/libs/appmodule.js"></script>
+        
+         
+        
+        
+   
+        
+        
 </head>
 <body>
 <!--------------Header--------------->
@@ -57,8 +70,6 @@
 	<div class="wrap-header zerogrid">
 		<div id="logo"><a href="#"><img src="./images/logo.png"/></a></div>
 		
-		
-                
 	</div>
 </header>
 
@@ -66,70 +77,62 @@
 	<div class="wrap-nav zerogrid">
 		<div class="menu">
 			<ul>
+                            <li><a href="portada.html">Portada</a></li> 
+                            <li class="current"><a href="inicio.html">Inicio</a></li>                               
+                            <li><a href="formulario.html">Crear Tarea</a></li>
+                            <li><a href="consulta.html">Consultar Tarea</a></li>
+                            <li><a href="documento.html">Documento</a></li>
 				
-                            <li class="current"><a href="index.html">Inicio</a></li> 
-                              
-				<li><a href="contact.html">Crear Tarea</a></li>
-                                <li><a href="gallery.html">Consultar Tarea</a></li>
-				<li><a href="single.html">Documento</a></li>
-                            
 			</ul>
 		</div>
 		
 		<div class="minimenu"><div>MENU</div>
 			<select onchange="location=this.value">
 				<option></option>
-				<option value="index.html">Inicio</option>
-				<option value="contact.html">Crear tarea</option>
-				<option value="gallery.html">Consultar Tarea</option>
-				<option value="single.html">Documento</option>
+                                <option value="portada.html">Portada</option>
+				<option value="inicio.html">Inicio</option>
+				<option value="formulario.html">Crear tarea</option>
+				<option value="consulta.html">Consultar Tarea</option>
+				<option value="documento.html">Documento</option>
 			</select>
 		</div>		
 	</div>
 </nav>
 
-<div class="featured">
-	<div class="wrap-featured zerogrid">
-		<div class="slider">
-			<div class="rslides_container">
-				<ul class="rslides" id="slider">
-					<li><img src="images/slide1.jpg"/></li>
-					<li><img src="images/slide2.jpg"/></li>
-					<li><img src="images/slide3.jpg"/></li>
-                                        <li><img src="images/slide4.jpg"/></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-</div>
+ 
+
+     
+
 
 <!--------------Content--------------->
 <section id="content">
 	<div class="wrap-content zerogrid">
-		<div class="row block01">
-			<div class="col-1-3">
-				<div class="wrap-col box">
-					<h2>Funcionalidad 1</h2>
-					<p>Calendario Compartido</p>
-					
+		<div class="row block03">
+			<div class="col-2-1">
+				<div class="wrap-col">
+					<article>
+						<div class="comment" ng-controller="controlador as cn">
+                                                    <form ng-controller="controlregistro as cr">
+                                                        <br><br>
+                                                        <center>
+                                                            <button ng-click="cn.consulta()" class="btn btn-lg btn-primary">Cargar Grupos </button><br>
+                                                            <br><br>
+                                                            <select ng-model="cn.name">
+                                                                <option ng-repeat="o in arreglo" value="{{o}}" class="b-lg btn-success">
+                                                                    {{o}}
+                                                                </option>
+                                                            </select>
+                                                      
+                                                            
+                                                        </center>
+                                                    </form>
+
+						</div>
+					</article>
 				</div>
 			</div>
-			<div class="col-1-3">
-				<div class="wrap-col box">
-					<h2>Funcionalidad 2</h2>
-					<p>Alarma para Tareas</p>
-					
-				</div>
-			</div>
-			<div class="col-1-3">
-				<div class="wrap-col box">
-					<h2>Funcionalidad 3</h2>
-					<p>Documento compartido</p>
-					
-				</div>
-			</div>
+			
 		</div>
-		
 	</div>
 </section>
 <!--------------Footer--------------->
@@ -168,7 +171,5 @@
 		
 	</div>
 </footer>
-
-
 
 </body></html>

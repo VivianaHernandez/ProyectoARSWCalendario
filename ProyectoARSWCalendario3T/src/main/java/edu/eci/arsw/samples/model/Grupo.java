@@ -10,20 +10,20 @@ public class Grupo {
 
     private List<Tarea> tareas=null;
     
-    String name=null;
+    String nombre=null;
     
-    public Grupo(String name,Tarea[] tar){
-        this.name=name;
+    public Grupo(String nombre,Tarea[] tar){
+        this.nombre=nombre;
         tareas=Arrays.asList(tar);
     }
           
-    public Grupo(String name){
-        this.name=name;
+    public Grupo(String nombre){
+        this.nombre=nombre;
         tareas=new ArrayList<>();
     }
 
     public String getName() {
-        return name;
+        return nombre;
     }
 
     public List<Tarea> getTarea() {

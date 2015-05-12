@@ -2,13 +2,13 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" ng-app="modone"> <!--<![endif]-->
 <head>
 
     <!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>zBoomMusic Free Html5 Responsive Template</title>
+	<title>Calendario Compartido</title>
 	<meta name="description" content="Free Html5 Templates and Free Responsive Themes Designed by Kimmy | zerotheme.com">
 	<meta name="author" content="www.zerotheme.com">
 	
@@ -56,6 +56,7 @@
 <header>
 	<div class="wrap-header zerogrid">
 		<div id="logo"><a href="#"><img src="./images/logo.png"/></a></div>
+		
 	</div>
 </header>
 
@@ -63,31 +64,70 @@
 	<div class="wrap-nav zerogrid">
 		<div class="menu">
 			<ul>
-			        <li class="current"><a href="index.html">Inicio</a></li>
-				<li><a href="contact.html">Crear Tarea</a></li>
-				<li><a href="gallery.html">Consultar Tarea</a></li>
-				<li class="current"><a href="single.html">Documento</a></li>	
-                            
-                           
+                            <li><a href="portada.html">Portada</a></li> 
+                            <li><a href="inicio.html">Inicio</a></li>                               
+                            <li class="current"><a href="formulario.html">Crear Tarea</a></li>
+                            <li><a href="consulta.html">Consultar Tarea</a></li>
+                            <li><a href="documento.html">Documento</a></li>
+				
 			</ul>
 		</div>
 		
 		<div class="minimenu"><div>MENU</div>
 			<select onchange="location=this.value">
 				<option></option>
-				<option value="index.html">Inicio</option>
-				<option value="contact.html">Crear tarea</option>
-				<option value="gallery.html">Consultar Tarea</option>
-				<option value="single.html">Documento</option>
+                                <option value="portada.html">Portada</option>
+				<option value="inicio.html">Inicio</option>
+				<option value="formulario.html">Crear tarea</option>
+				<option value="consulta.html">Consultar Tarea</option>
+				<option value="documento.html">Documento</option>
 			</select>
 		</div>		
 	</div>
 </nav>
 
+ <!-- Angular.js -->
+        <script src="js/libs/angular.min.js"></script>
+        <script src="js/libs/angular-route.js"></script>
+        <script src="js/libs/appmodule.js"></script>
+
+        <!-- Sock.js && Stomp for Websockets libraries -->
+        <script src="js/libs/sockjs-0.3.min.js"></script>
+        <script src="js/libs/stomp.js"></script>
+
+        <script src="js/libs/websockmodule.js"></script>
+
+
 <!--------------Content--------------->
 <section id="content">
 	<div class="wrap-content zerogrid">
-		
+		<div class="row block03">
+			<div class="col-2-1">
+				<div class="wrap-col">
+					<article>
+						<div class="comment" ng-controller="controlador as cn">
+							<center><form>
+                                                                <p>Fecha</p>
+                                                                <div><input type="date" name="fecha" id="fechal" ng-model="fecha"></div>	
+                                                                <p>Grupo</p>
+                                                                <div><input type="text" name="grupo" id="grupo" ng-model="grupo"></div>	
+                                                                <p>Nombre</p>
+                                                                <div><input type="text" name="nombre" id="nombre" ng-model="nombre"></div>
+                                                                <p>Descripcion</p>
+                                                                <div><input type="text" name="descripcion" id="descripcion" ng-model="descripcion"></div>
+                                                                
+                                                                      <textarea  ng-model="cuerpo" readonly></textarea><br>
+                                                                
+								<div><button class="btn btn-success"  ng-click="enviar()" >Enviar</button></div>
+                                                                
+                                                   
+							</form></center>
+						</div>
+					</article>
+				</div>
+			</div>
+			
+		</div>
 	</div>
 </section>
 <!--------------Footer--------------->
@@ -126,6 +166,5 @@
 		
 	</div>
 </footer>
-
 
 </body></html>
