@@ -46,6 +46,11 @@ public class Tarea {
     public Date getFecha() {
         return fecha;
     }
+    
+    public int getDia()
+    {
+    return fecha.getDate();
+    }
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;

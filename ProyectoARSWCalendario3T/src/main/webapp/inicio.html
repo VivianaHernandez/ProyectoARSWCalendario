@@ -111,18 +111,27 @@
 			<div class="col-2-1">
 				<div class="wrap-col">
 					<article>
-						<div class="comment" ng-controller="controlador as cn">
-                                                    <form ng-controller="controlregistro as cr">
+						<div class="comment"
+                                                     >
+                                                    <form ng-controller="controlador as cn">
                                                         <br><br>
                                                         <center>
-                                                            <button ng-click="cn.consulta()" class="btn btn-lg btn-primary">Cargar Grupos </button><br>
+                                                            <button ng-click="cn.consultaGrupo()" class="btn btn-lg btn-primary">Consultar Grupos </button><br>
                                                             <br><br>
-                                                            <select ng-model="cn.name">
-                                                                <option ng-repeat="o in arreglo" value="{{o}}" class="b-lg btn-success">
+                                                            <select ng-model="cn.nombre">
+                                                                <option ng-repeat="o in arregloGrupos" value="{{o}}" class="b-lg btn-success">
                                                                     {{o}}
-                                                                </option>
+                                                                </option>  
                                                             </select>
+                                                            <br><br>
+                                                             <button ng-click="cn.consultaFecha()" class="btn btn-lg btn-primary">Consultar fechas</button><br>
                                                       
+                                                             <br><br>
+                                                             <select ng-model="cn.fecha">
+                                                                <option ng-repeat="o in arregloTareas" value="{{o}}" class="b-lg btn-success">
+                                                                    {{o}}
+                                                                </option>  
+                                                            </select>
                                                             
                                                         </center>
                                                     </form>
