@@ -13,22 +13,18 @@ import java.util.Map;
 import java.util.Set;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author hcadavid
- */
 @Service
 public class ServicesFacade {
    
     private static final Map<String,Grupo> dummyBluePrints=new LinkedHashMap<>();
     private static final Date fecha=new Date();
     static{
-        fecha.setDate(2);fecha.setMonth(2);fecha.setYear(2);
-        dummyBluePrints.put("Grupo1",new Grupo("grupo1",new Tarea[]{new Tarea("t1","de1",fecha),new Tarea("t11","de11",fecha)}));
-        fecha.setDate(3);fecha.setMonth(3);fecha.setYear(3);
-        dummyBluePrints.put("Grupo2",new Grupo("grupo2",new Tarea[]{new Tarea("t2","de2",fecha),new Tarea("t21","de21",fecha)}));
-        fecha.setDate(4);fecha.setMonth(4);fecha.setYear(4);
-        dummyBluePrints.put("Grupo3", new Grupo("grupo3",new Tarea[]{new Tarea("t3","de3",fecha),new Tarea("t31","de31",fecha)}));
+        fecha.setDate(2);fecha.setMonth(7);fecha.setYear(2015);
+        dummyBluePrints.put("Grupo1",new Grupo("grupo1",new Tarea[]{new Tarea("Tarea ARSW","Descripcion 1",fecha),new Tarea("Tarea ARSW+","Descripcion 11",fecha)}));
+        fecha.setDate(3);fecha.setMonth(5);fecha.setYear(2015);
+        dummyBluePrints.put("Grupo2",new Grupo("grupo2",new Tarea[]{new Tarea("Tarea LANS","Descripcion 2",fecha),new Tarea("Tarea LANS+","Descripcion 21",fecha)}));
+        fecha.setDate(8);fecha.setMonth(12);fecha.setYear(2015);
+        dummyBluePrints.put("Grupo3", new Grupo("grupo3",new Tarea[]{new Tarea("Tarea PGR1","Descripcion 3",fecha),new Tarea("TAREA PGR1+","Descripcion 31",fecha)}));
     }
     
     public void addNewGrupo(String name,Grupo bp){

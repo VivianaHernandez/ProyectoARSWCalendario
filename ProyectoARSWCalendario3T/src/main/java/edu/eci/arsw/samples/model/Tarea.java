@@ -22,6 +22,7 @@ public class Tarea {
         this.nombre = nombre;
         this.descripcion =descripcion;
         this.fecha=fecha;
+        
     }
 
     public Tarea(String grupo1, Tarea[] tarea) {
@@ -50,6 +51,16 @@ public class Tarea {
     public int getDia()
     {
     return fecha.getDate();
+    }
+    
+     public int getMonth()
+    {
+    return fecha.getMonth();
+    }
+     
+      public int getYear()
+    {
+    return fecha.getYear();
     }
 
     public void setFecha(Date fecha) {

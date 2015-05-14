@@ -116,23 +116,26 @@
                                                     <form ng-controller="controlador as cn">
                                                         <br><br>
                                                         <center>
-                                                            <button ng-click="cn.consultaGrupo()" class="btn btn-lg btn-primary">Consultar Grupos </button><br>
-                                                            <br><br>
+                                                            <button ng-click="cn.consultaGrupo()" class="btn btn-lg btn-primary">Consultar Grupos </button>
+                                                          
                                                             <select ng-model="cn.nombre">
                                                                 <option ng-repeat="o in arregloGrupos" value="{{o}}" class="b-lg btn-success">
                                                                     {{o}}
                                                                 </option>  
                                                             </select>
                                                             <br><br>
-                                                             <button ng-click="cn.consultaFecha()" class="btn btn-lg btn-primary">Consultar fechas</button><br>
+                                                             <button ng-click="cn.consultaNombre()" class="btn btn-lg btn-primary">Consultar fechas</button>
                                                       
-                                                             <br><br>
-                                                             <select ng-model="cn.fecha">
+                                                             <select ng-model="cn.tarea">
                                                                 <option ng-repeat="o in arregloTareas" value="{{o}}" class="b-lg btn-success">
                                                                     {{o}}
                                                                 </option>  
                                                             </select>
-                                                            
+                                                            <br><br>
+                                                             
+                                                             
+                                                              <a href="formulario.html" target="_self"> <input type="button" value="Crear Tarea" /> </a> 
+                                                             
                                                         </center>
                                                     </form>
 
