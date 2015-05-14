@@ -17,12 +17,13 @@ public class Tarea {
     private String nombre;
     private String descripcion;
     private Date fecha;
+    private int dia;
 
      public Tarea(String nombre,String descripcion, Date fecha) {
         this.nombre = nombre;
         this.descripcion =descripcion;
         this.fecha=fecha;
-        
+        this.dia=fecha.getDate();
     }
 
     public Tarea(String grupo1, Tarea[] tarea) {
