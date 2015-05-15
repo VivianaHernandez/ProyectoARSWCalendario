@@ -5,10 +5,11 @@
             function ($scope, $http) {
                 
                 this.nombre = ""; 
-                $scope.descripcion = "";
+                $scope.descripcion = "prueba";
                
                 $scope.tarea = "";
                 this.tarea1="";
+                $scope.fechas="prueba";
 
                 this.dia;
                 this.month;
@@ -70,35 +71,20 @@
                             success(function (data) {
 
                             for (i = 0; i < data.tarea.length; i++) {
-                                   
-                                   this.tarea1=$scope.tarea;
-                                  
-                                   alert('Nombre Tarea: '+data.tarea[i].nombre);
-                                   alert('This.tarea1: '+ this.tarea1);
-           
+                                   this.tarea1=$scope.tarea;  
                                     if(data.tarea[i].nombre==this.tarea1)
                                     {
-                                        alert('Entro=)=)=)=)=)=)=)=)=)=)=)=)=)=)=)');
-                                        
                                       descripcion=data.tarea[i].descripcion;  
-                                      
-                                       alert('Descripcion: '+data.tarea[i].descripcion);
-                                    
+                                      fechas=data.tarea[i].dia+"/"+data.tarea[i].month+"/"+data.tarea[i].year;
                                     }
                                 }
-                                
-                                alert('Descripcion=): '+descripcion);
-                                
-                                
+                                alert('Descripcion=)=)=): '+descripcion);
+                                alert('Fecha=)=)=): '+fechas);
                             }).
                             error(function (data) {
                                 alert('error');
-                            });
-                    
-                   
+                            }); 
                 };
-                
-                
             }
     );
 
