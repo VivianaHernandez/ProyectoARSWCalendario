@@ -74,17 +74,38 @@
                                    this.tarea1=$scope.tarea;  
                                     if(data.tarea[i].nombre==this.tarea1)
                                     {
+                                        
+                                        var message = data.tarea[i];
+                  
                                       descripcion=data.tarea[i].descripcion;  
                                       fechas=data.tarea[i].dia+"/"+data.tarea[i].month+"/"+data.tarea[i].year;
+                                      
+                                      
+                                       console.log(message['fechas']);
+                                       
+                               
+                                      
                                     }
                                 }
                                 alert('Descripcion=)=)=): '+descripcion);
                                 alert('Fecha=)=)=): '+fechas);
+                                
+                                
+                                
+                  
+                                
+                                
+                                
                             }).
                             error(function (data) {
                                 alert('error');
                             }); 
                 };
+                
+                
+                
+                
+                
             }
     );
 
