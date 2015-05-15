@@ -48,5 +48,10 @@ public class GrupoController {
     public Grupo getABlueprint(@PathVariable("gruponame") String gruponame) {       
         return services.getGrupoByName(gruponame);
     } 
+    
+    @RequestMapping(value = "/{gruponame}",method = RequestMethod.POST)        
+    public Grupo getAGrupo(@PathVariable("gruponame") String gruponame) {       
+        return services.getGrupoByName(gruponame);
+    } 
 }
 
