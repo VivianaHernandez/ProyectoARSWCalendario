@@ -124,19 +124,19 @@
                                                             <br><br>
                                                              <button ng-click="cn.consultaNombre()" class="btn btn-lg btn-primary">Consultar tareas</button>
                                                       
-                                                             <select ng-model="cn.tarea">
+                                                             <select ng-model="tarea">
                                                                 <option ng-repeat="o in arregloTareas" value="{{o}}" class="b-lg btn-success">
                                                                     {{o}}
                                                                 </option>  
                                                             </select>
-                                                             <br>
-                                                             <input> 
-                                                             <textarea ng-model="cn.descripcion"></textarea><br>
-                                                             
+                                                  
                                                             <br><br>
                                                              
+                                                             <button ng-click="cn.consultarTodo()" class="btn btn-lg btn-primary">Consultar</button>
+                                                              <br><br>
+                                                               <textarea ng-model="descripcion"></textarea><br>
                                                              
-                                                              
+                                                             
                                                              
                                                         </center>
                                                     </form>
