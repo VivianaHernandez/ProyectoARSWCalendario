@@ -1,8 +1,4 @@
-﻿<!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" ng-app="modone"> <!--<![endif]-->
+<html lang="en" ng-app="modone"> 
 <head>
 
     <!-- Basic Page Needs
@@ -107,18 +103,21 @@
 					<article>
 						<div class="comment" ng-controller="controlador as cn">
 							<center><form>
+                                                                <button ng-click="cn.consultaGrupo()" class="btn btn-lg btn-primary">Consultar grupos </button>
+                                                                <br><br>
+                                                                <select ng-model="cn.nombre">
+                                                                    <option ng-repeat="o in arregloGrupos" value="{{o}}" class="b-lg btn-success">
+                                                                        {{o}}
+                                                                    </option>  
+                                                                </select><br><br>
                                                                 <p>Fecha</p>
-                                                                <div><input type="date" name="fecha" id="fechal" ng-model="fecha"></div>	
-                                                                <p>Grupo</p>
-                                                                <div><input type="text" name="grupo" id="grupo" ng-model="grupo"></div>	
+                                                                <div><input type="date" name="fecha" id="fechal" ng-model="fecha"></div>
                                                                 <p>Nombre</p>
-                                                                <div><input type="text" name="nombre" id="nombre" ng-model="nombre"></div>
+                                                                <div><input type="text" name="nombre" id="nombre" ng-model="cn.nombtarea"></div>
                                                                 <p>Descripcion</p>
-                                                                <div><input type="text" name="descripcion" id="descripcion" ng-model="descripcion"></div>
+                                                                <div><input type="text" name="descripcion" id="descripcion" ng-model="cn.descripcion"></div>
                                                                 
-                                                                      <textarea  ng-model="cuerpo" readonly></textarea><br>
-                                                                
-								<div><button class="btn btn-success"  ng-click="enviar()" >Enviar</button></div>
+								<div><button class="btn btn-success"  ng-click="cn.enviar()" >Enviar</button></div>
                                                                 
                                                    
 							</form></center>

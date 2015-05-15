@@ -4,6 +4,8 @@
     app.controller('controlador',
             function ($scope, $http) {
                 this.nombre = "";
+                this.nombtarea="";
+                this.descripcion = "";
                 this.tarea="";
                 this.dia;
                 this.month;
@@ -40,6 +42,11 @@
                             });
 
 
+                };
+                
+                this.enviar=function(){
+                   alert('Nombre '+this.nombre) ;
+                   alert('Descripcion '+this.descripcion) ;
                 };
             }
     );
