@@ -4,16 +4,16 @@
     app.controller('controlador',
             function ($scope, $http) {
                 this.nombre = "";
-                this.nombtarea="";
+                this.nombtarea = "";
                 this.descripcion = "";
-                this.tarea="";
+                this.tarea = "";
                 this.dia;
                 this.month;
                 this.year;
 
                 $scope.arregloGrupos = [];
                 $scope.arregloTareas = [];
-                 $scope.arreglo=[];
+                $scope.arreglo = [];
 
                 this.consultaGrupo = function () {
                     alert('Entro');
@@ -32,9 +32,9 @@
                     alert('Grupo: ' + this.nombre);
                     $http.get('rest/grupos/' + this.nombre).
                             success(function (data) {
-                               
-                                for (i=0;i<data.tarea.length;i++){
-                                    $scope.arregloTareas[i]=data.tarea[i].nombre;
+
+                                for (i = 0; i < data.tarea.length; i++) {
+                                    $scope.arregloTareas[i] = data.tarea[i].nombre;
                                 }
                             }).
                             error(function (data) {
@@ -43,10 +43,16 @@
 
 
                 };
-                
-                this.enviar=function(){
-                   alert('Nombre '+this.nombre) ;
-                   alert('Descripcion '+this.descripcion) ;
+
+                this.enviar = function () {
+                    
+                    alert('Nombre ' + this.nombtarea);
+                    alert('Descripcion ' + this.descripcion);
+                    
+                    $http.post('rest/grupos/' + this.nombre, {"nombre":this.nombtarea,"descripcion":this.descripcion}).
+                            success(function (data) {
+                                alert('Hizo Peticion =)')
+                            });
                 };
             }
     );
