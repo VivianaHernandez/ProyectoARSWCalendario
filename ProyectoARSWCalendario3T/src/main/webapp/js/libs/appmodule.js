@@ -5,11 +5,11 @@
             function ($scope, $http) {
                 
                 this.nombre = ""; 
-                $scope.descripcion = "prueba";
+                $scope.descripcion = "";
                
                 $scope.tarea = "";
                 this.tarea1="";
-                $scope.fechas="prueba";
+                $scope.fechas="";
 
                 this.dia;
                 this.month;
@@ -18,12 +18,14 @@
                 $scope.arregloGrupos = [];
                 $scope.arregloTareas = [];
                 $scope.arreglo = [];
-/*---------------Funciones para consultar-----------------*/
+                
+//-----------------------------------------------------------------------------------------------------//                
+//--------------------------------------------Funciones para consultar---------------------------------//
+//-----------------------------------------------------------------------------------------------------//
                 this.consultaGrupo = function () {
                     
                     $http.get('rest/grupos').
                             success(function (data) {
-                                alert('Satisfactorio=)' + data);
                                 $scope.arregloGrupos = data;
                             }).
                             error(function (data) {
@@ -33,7 +35,7 @@
                 };
 
                 this.consultaNombre = function () {
-                    alert('Grupo: ' + this.nombre);
+                   
                     $http.get('rest/grupos/' + this.nombre).
                             success(function (data) {
 
@@ -44,29 +46,9 @@
                             error(function (data) {
                                 alert('error');
                             });
-
-
                 };
-                
-                
-                 this.consultaNombre = function () {
-                    alert('Grupo: ' + this.nombre);
-                    $http.get('rest/grupos/' + this.nombre).
-                            success(function (data) {
-
-                                for (i = 0; i < data.tarea.length; i++) {
-                                    $scope.arregloTareas[i] = data.tarea[i].nombre;
-                                }
-                            }).
-                            error(function (data) {
-                                alert('error');
-                            });
-
-
-                };
-                
+      
                 this.consultarTodo = function () {
-                    
                     $http.get('rest/grupos/' + this.nombre).
                             success(function (data) {
 
@@ -74,33 +56,38 @@
                                    this.tarea1=$scope.tarea;  
                                     if(data.tarea[i].nombre==this.tarea1)
                                     {
-                                        
                                         var message = data.tarea[i];
-                  
-                                      descripcion=data.tarea[i].descripcion;  
-                                      fechas=data.tarea[i].dia+"/"+data.tarea[i].month+"/"+data.tarea[i].year;
-                                      
-                                      
-                                       console.log(message['fechas']);
-                                       
-                               
-                                      
+                                       $scope.descripcion=data.tarea[i].descripcion;  
+                                       $scope.fechas=data.tarea[i].dia+"/"+data.tarea[i].month+"/"+data.tarea[i].year;
+                                      console.log(message['fechas']); 
                                     }
-                                }
-                                alert('Descripcion=)=)=): '+descripcion);
-                                alert('Fecha=)=)=): '+fechas);
-                                
-                                
-                                
-                  
-                                
-                                
-                                
+                                }                     
                             }).
                             error(function (data) {
                                 alert('error');
                             }); 
-                };
+                };  
+                
+//-----------------------------------------------------------------------------------------------------//                
+//--------------------------------------------Funciones para crear---------------------------------//
+//-----------------------------------------------------------------------------------------------------//                
+               $scope.consultarTodo = function () {
+                    $http.post('rest/grupos/'+this.nombre,{"name":$scope.name,"tarea":
+                                [{"nombre":$scope.nombre,"descripcion":$scope.descripcion,
+                                "fecha":$scope.fecha,"fechas":"","dia":$scope.dia,"month":$scope.month,"year":$scope.year}]}).
+                            success(function (data) {
+
+                                             
+                            }).
+                            error(function (data) {
+                                alert('error');
+                            }); 
+                };  
+                
+                
+             
+               
+                
                 
                 
                 
