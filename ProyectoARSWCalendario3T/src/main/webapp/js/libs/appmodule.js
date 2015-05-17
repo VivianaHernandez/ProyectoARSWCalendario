@@ -75,14 +75,14 @@
 //-----------------------------------------------------------------------------------------------------//                
                $scope.enviar = function () {
                    alert('pasooooo'+this.nombre);
-                    $http.post('rest/grupos/'+this.nombre,{"name":this.nombre,"tarea":[{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,
-                                "fecha":$scope.fecha,"fechas":"","dia":$scope.dia,"month":$scope.month,"year":$scope.year}]}).
+                    $http.post('rest/grupos/'+this.nombre,{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,
+                                "fecha":$scope.fecha,"fechas":"","dia":5,"month":6,"year":7}).
                             success(function (data) {
                                 alert('111111111: '+$scope.fecha);
                                 
-                                alert('nombre del grupo: '+this.nombre);
-                                alert('trae en lafecha: '+$scope.nombtarea);
-                                alert('descripciooooon: '+$scope.descripcion);
+                                alert('dia : '+this.dia);
+                                alert('mes: '+this.month);
+                                alert('añooooooo: '+this.year);
                             }).
                             error(function (data) {
                                 alert('error');
