@@ -74,11 +74,13 @@
 //--------------------------------------------Funciones para crear---------------------------------//
 //-----------------------------------------------------------------------------------------------------//                
                $scope.enviar = function () {
-                   alert('pasooooo');
-                    $http.post('rest/grupos/'+this.nombre,{"nombre":this.nombtarea,"descripcion":$scope.descripcion,
-                                "fecha":$scope.fecha,"fechas":"","dia":$scope.dia,"month":$scope.month,"year":$scope.year}).
+                   alert('pasooooo'+this.nombre);
+                    $http.post('rest/grupos/'+this.nombre,{"name":this.nombre,"tarea":[{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,
+                                "fecha":$scope.fecha,"fechas":"","dia":$scope.dia,"month":$scope.month,"year":$scope.year}]}).
                             success(function (data) {
                                 alert('111111111: '+$scope.fecha);
+                                
+                                alert('nombre del grupo: '+this.nombre);
                                 alert('trae en lafecha: '+$scope.nombtarea);
                                 alert('descripciooooon: '+$scope.descripcion);
                             }).
