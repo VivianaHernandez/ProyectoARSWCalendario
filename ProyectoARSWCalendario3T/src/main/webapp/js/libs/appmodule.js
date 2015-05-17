@@ -10,7 +10,7 @@
                 $scope.tarea = "";
                 this.tarea1="";
                 $scope.fechas="";
-
+                $scope.fecha="";
                 this.dia;
                 this.month;
                 this.year;
@@ -26,6 +26,7 @@
                     
                     $http.get('rest/grupos').
                             success(function (data) {
+                                alert('hola');
                                 $scope.arregloGrupos = data;
                             }).
                             error(function (data) {
@@ -38,7 +39,7 @@
                    
                     $http.get('rest/grupos/' + this.nombre).
                             success(function (data) {
-
+                                    
                                 for (i = 0; i < data.tarea.length; i++) {
                                     $scope.arregloTareas[i] = data.tarea[i].nombre;
                                 }
@@ -71,28 +72,17 @@
 //-----------------------------------------------------------------------------------------------------//                
 //--------------------------------------------Funciones para crear---------------------------------//
 //-----------------------------------------------------------------------------------------------------//                
-               $scope.consultarTodo = function () {
-                    $http.post('rest/grupos/'+this.nombre,{"name":$scope.name,"tarea":
-                                [{"nombre":$scope.nombre,"descripcion":$scope.descripcion,
-                                "fecha":$scope.fecha,"fechas":"","dia":$scope.dia,"month":$scope.month,"year":$scope.year}]}).
+               $scope.enviar = function () {
+                   alert('pasooooo');
+                    $http.post('rest/grupos/'+this.nombre,{"nombre":this.nombre,"descripcion":$scope.descripcion,
+                                "fecha":$scope.fecha,"fechas":"","dia":$scope.dia,"month":$scope.month,"year":$scope.year}).
                             success(function (data) {
-
-                                             
+                                alert('trae en lafecha: '+$scope.fecha);
                             }).
                             error(function (data) {
                                 alert('error');
                             }); 
                 };  
-                
-                
-             
-               
-                
-                
-                
-                
-                
-                
             }
     );
 

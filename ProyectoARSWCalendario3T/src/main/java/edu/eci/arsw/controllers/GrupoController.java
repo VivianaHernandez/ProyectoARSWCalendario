@@ -50,7 +50,8 @@ public class GrupoController {
     } 
     
     @RequestMapping(value = "/{gruponame}",method = RequestMethod.POST)        
-    public Grupo getAGrupo(@PathVariable("gruponame") String gruponame) {       
+    public Grupo getAGrupo(@PathVariable("gruponame") String gruponame) {    
+        System.out.println("entro ahacer la peticion post");
         return services.getGrupoByName(gruponame);
     } 
 }
