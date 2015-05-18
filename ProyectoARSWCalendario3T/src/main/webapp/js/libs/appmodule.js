@@ -63,6 +63,10 @@
                                         $scope.descripcion=$scope.arr[i].descripcion;
                                         $scope.dia=$scope.arr[i].dia;
                                         $scope.month=$scope.arr[i].month;
+                                        if($scope.arr[i].year==115){
+                                            $scope.arr[i].year=2015;
+                                        }
+                                        alert('alertaaaaaaa'+$scope.arr[i].year);
                                         $scope.year=$scope.dia+"/"+$scope.month+"/"+$scope.arr[i].year;
                                     }
                                 }
@@ -91,4 +95,4 @@
             }
     );
 
-})();
+})(); 
