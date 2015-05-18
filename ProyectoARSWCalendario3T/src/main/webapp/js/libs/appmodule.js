@@ -33,7 +33,6 @@
                             error(function (data) {
                                 alert('Error');
                             });
-
                 };
 
                 this.consultaNombre = function () {
@@ -75,14 +74,9 @@
 //-----------------------------------------------------------------------------------------------------//                
                $scope.enviar = function () {
                    alert('pasooooo'+this.nombre);
-                    $http.post('rest/grupos/'+this.nombre,{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,
-                                "fecha":$scope.fecha,"fechas":"","dia":5,"month":6,"year":7}).
+                    $http.post('rest/grupos/'+this.nombre,{"nombre":"Tarea LANS","descripcion":"Descripcion Tarea LANS 2","fecha":61394648400000,"fechas":"","dia":10,"month":6,"year":2015}).
                             success(function (data) {
-                                alert('111111111: '+$scope.fecha);
-                                
-                                alert('dia : '+this.dia);
-                                alert('mes: '+this.month);
-                                alert('añooooooo: '+this.year);
+                                alert('saliooooooooo');
                             }).
                             error(function (data) {
                                 alert('error');

@@ -13,6 +13,8 @@
           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
 ">
 
-    <context:component-scan base-package="edu.eci.arsw.services"/>
+    <bean name="manejadorGrupos" class="edu.eci.arsw.samples.model.ManejadorGrupos" >        
+           
+    </bean>
     
 </beans>

@@ -31,6 +31,9 @@ public class Tarea {
         this.year=fecha.getYear();
     }
 
+      public Tarea() {
+        
+    }
     public Tarea(String grupo1, Tarea[] tarea) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
