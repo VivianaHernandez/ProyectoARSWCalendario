@@ -15,6 +15,7 @@
                 this.dia=20;
                 this.month=11;
                 this.year=1994;
+                $scope.arr=[];
 
                 $scope.arregloGrupos = [];
                 $scope.arregloTareas = [];
@@ -39,7 +40,7 @@
                    
                     $http.get('rest/grupos/' + $scope.nombre).
                             success(function (data) {
-                                arr=data.tarea;
+                                $scope.arr=data.tarea;
                                 nom=[];
                                         
                                 for(i=0;i<data.tarea.length;i++){
@@ -58,17 +59,22 @@
                 this.consultarTodo = function () {
                     $http.get('rest/grupos/' + $scope.nombre).
                             success(function (data) {
-
-                            for (i = 0; i < data.tarea.length; i++) {
-                                   this.tarea1=$scope.tarea;  
-                                    if(data.tarea[i].nombre==this.tarea1)
-                                    {
-                                        var message = data.tarea[i];
-                                       $scope.descripcion=data.tarea[i].descripcion;  
-                                       $scope.fechas=data.tarea[i].dia+"/"+data.tarea[i].month+"/"+data.tarea[i].year;
-                                      console.log(message['fechas']); 
+                            for(i=0;i<$scope.arr.length;i++){
+                                    if($scope.tarea==$scope.arr[i].nombre){
+                                        alert('latareaes: '+$scope.tarea);
+                                        alert('ARREGLO TAREAS [ '+i+' ] :'+$scope.arr[i].descripcion);
                                     }
-                                }                     
+                                }
+                           // for (i = 0; i < data.tarea.length; i++) {
+                             //      this.tarea1=$scope.tarea;  
+                               //     if(data.tarea[i].nombre==this.tarea1)
+                                    //{
+                                      //  var message = data.tarea[i];
+                                    //   $scope.descripcion=data.tarea[i].descripcion;  
+                                  //     $scope.fechas=data.tarea[i].dia+"/"+data.tarea[i].month+"/"+data.tarea[i].year;
+                                //      console.log(message['fechas']); 
+                              //      }
+                            //    }                     
                             }).
                             error(function (data) {
                                 alert('error');
