@@ -1,3 +1,5 @@
+/* global date */
+
 (function () {
     var app = angular.module('modone', []);
 
@@ -11,10 +13,10 @@
                 $scope.tarea = "";
                 this.tarea1="";
                 $scope.fechas="";
-                $scope.fecha="";
-                this.dia=20;
-                this.month=11;
-                this.year=1994;
+                $scope.fecha=new Date();
+                $scope.dia;
+                $scope.month;
+                $scope.consulta="";
                 $scope.arr=[];
 
                 $scope.arregloGrupos = [];
@@ -42,11 +44,8 @@
                             success(function (data) {
                                 $scope.arr=data.tarea;
                                 nom=[];
-                                        
                                 for(i=0;i<data.tarea.length;i++){
                                     nom[i]=data.tarea[i].nombre;
-                                    
-                                    alert('NOM [ '+i+' ] :'+nom[i]);
                                 }
                                 $scope.arregloTareas=nom;
                                 
@@ -61,20 +60,13 @@
                             success(function (data) {
                             for(i=0;i<$scope.arr.length;i++){
                                     if($scope.tarea==$scope.arr[i].nombre){
-                                        alert('latareaes: '+$scope.tarea);
-                                        alert('ARREGLO TAREAS [ '+i+' ] :'+$scope.arr[i].descripcion);
+                                        $scope.descripcion=$scope.arr[i].descripcion;
+                                        $scope.dia=$scope.arr[i].dia;
+                                        $scope.month=$scope.arr[i].month;
+                                        $scope.year=$scope.arr[i].fechas;
+                                        $scope.year=$scope.dia+"/"+$scope.month+"/"+$scope.year;
                                     }
                                 }
-                           // for (i = 0; i < data.tarea.length; i++) {
-                             //      this.tarea1=$scope.tarea;  
-                               //     if(data.tarea[i].nombre==this.tarea1)
-                                    //{
-                                      //  var message = data.tarea[i];
-                                    //   $scope.descripcion=data.tarea[i].descripcion;  
-                                  //     $scope.fechas=data.tarea[i].dia+"/"+data.tarea[i].month+"/"+data.tarea[i].year;
-                                //      console.log(message['fechas']); 
-                              //      }
-                            //    }                     
                             }).
                             error(function (data) {
                                 alert('error');
@@ -85,12 +77,14 @@
 //--------------------------------------------Funciones para crear---------------------------------//
 //-----------------------------------------------------------------------------------------------------//                
                $scope.enviar = function () {
-                   alert('pasooooo'+$scope.nombre);
                    
-                
-                    $http.post('rest/grupos/'+$scope.nombre,{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,"fecha":$scope.fecha,"fechas":$scope.fechas,"dia":this.dia,"month":this.month,"year":this.year}).
+                                $scope.dia=$scope.fecha.getDate();
+                                $scope.month=$scope.fecha.getMonth();
+                                $scope.fechas=$scope.fecha.getFullYear()+"";
+                                alert('attttttttttoooo '+$scope.fechas);
+                    $http.post('rest/grupos/'+$scope.nombre,{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,"fecha":$scope.fecha,"fechas":$scope.year,"dia":$scope.dia,"month":$scope.month,"year":$scope.year}).
                             success(function (data) {
-                                alert('saliooooooooo');
+                                
                             }).
                             error(function (data) {
                                 alert('error');
@@ -100,4 +94,3 @@
     );
 
 })();
-
