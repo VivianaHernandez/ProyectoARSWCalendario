@@ -48,8 +48,8 @@ public class GrupoController {
     
     @RequestMapping(value="/{numgrupo}",method = RequestMethod.POST)
     public ResponseEntity<?> persist(@PathVariable int numgrupo,@RequestBody Tarea tarea ) throws ExcepcionManejadorGrupos {
-       System.out.println("ENTRO A ESTE METODO POOOOOOOOOOOST"+tarea.getDescripcion());
-        //mg.agregarGrupoTareas(numgrupo+"",tarea);
+       System.out.println("ENTRO A ESTE METODO POOOOOOOOOOOST"+tarea.getDescripcion()+"grupoooo:"+numgrupo);
+        mg.agregarGrupoTareas(numgrupo+"",tarea);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
     

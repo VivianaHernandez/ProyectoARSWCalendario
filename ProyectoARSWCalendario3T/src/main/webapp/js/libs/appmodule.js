@@ -12,9 +12,9 @@
                 this.tarea1="";
                 $scope.fechas="";
                 $scope.fecha="";
-                this.dia;
-                this.month;
-                this.year;
+                this.dia=20;
+                this.month=11;
+                this.year=1994;
 
                 $scope.arregloGrupos = [];
                 $scope.arregloTareas = [];
@@ -74,7 +74,9 @@
 //-----------------------------------------------------------------------------------------------------//                
                $scope.enviar = function () {
                    alert('pasooooo'+this.nombre);
-                    $http.post('rest/grupos/'+this.nombre,{"nombre":"Tarea LANS","descripcion":"Descripcion Tarea LANS 2","fecha":61394648400000,"fechas":"","dia":10,"month":6,"year":2015}).
+                   
+                
+                    $http.post('rest/grupos/'+this.nombre,{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,"fecha":$scope.fecha,"fechas":$scope.fechas,"dia":this.dia,"month":this.month,"year":this.year}).
                             success(function (data) {
                                 alert('saliooooooooo');
                             }).
