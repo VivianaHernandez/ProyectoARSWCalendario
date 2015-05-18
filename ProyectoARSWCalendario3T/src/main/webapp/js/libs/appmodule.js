@@ -4,7 +4,7 @@
     app.controller('controlador',
             function ($scope, $http) {
                 
-                this.nombre = ""; 
+                $scope.nombre = ""; 
                 $scope.nombtarea=""
                 $scope.descripcion = "";
                
@@ -37,12 +37,18 @@
 
                 this.consultaNombre = function () {
                    
-                    $http.get('rest/grupos/' + this.nombre).
+                    $http.get('rest/grupos/' + $scope.nombre).
                             success(function (data) {
+                                arr=data.tarea;
+                                nom=[];
+                                        
+                                for(i=0;i<data.tarea.length;i++){
+                                    nom[i]=data.tarea[i].nombre;
                                     
-                                for (i = 0; i < data.tarea.length; i++) {
-                                    $scope.arregloTareas[i] = data.tarea[i].nombre;
+                                    alert('NOM [ '+i+' ] :'+nom[i]);
                                 }
+                                $scope.arregloTareas=nom;
+                                
                             }).
                             error(function (data) {
                                 alert('error');
@@ -50,7 +56,7 @@
                 };
       
                 this.consultarTodo = function () {
-                    $http.get('rest/grupos/' + this.nombre).
+                    $http.get('rest/grupos/' + $scope.nombre).
                             success(function (data) {
 
                             for (i = 0; i < data.tarea.length; i++) {
@@ -73,10 +79,10 @@
 //--------------------------------------------Funciones para crear---------------------------------//
 //-----------------------------------------------------------------------------------------------------//                
                $scope.enviar = function () {
-                   alert('pasooooo'+this.nombre);
+                   alert('pasooooo'+$scope.nombre);
                    
                 
-                    $http.post('rest/grupos/'+this.nombre,{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,"fecha":$scope.fecha,"fechas":$scope.fechas,"dia":this.dia,"month":this.month,"year":this.year}).
+                    $http.post('rest/grupos/'+$scope.nombre,{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,"fecha":$scope.fecha,"fechas":$scope.fechas,"dia":this.dia,"month":this.month,"year":this.year}).
                             success(function (data) {
                                 alert('saliooooooooo');
                             }).
