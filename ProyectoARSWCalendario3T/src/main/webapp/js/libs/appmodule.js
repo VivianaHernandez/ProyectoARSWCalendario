@@ -63,8 +63,7 @@
                                         $scope.descripcion=$scope.arr[i].descripcion;
                                         $scope.dia=$scope.arr[i].dia;
                                         $scope.month=$scope.arr[i].month;
-                                        $scope.year=$scope.arr[i].fechas;
-                                        $scope.year=$scope.dia+"/"+$scope.month+"/"+$scope.year;
+                                        $scope.year=$scope.dia+"/"+$scope.month+"/"+$scope.arr[i].year;
                                     }
                                 }
                             }).
@@ -81,7 +80,6 @@
                                 $scope.dia=$scope.fecha.getDate();
                                 $scope.month=$scope.fecha.getMonth();
                                 $scope.fechas=$scope.fecha.getFullYear()+"";
-                                alert('attttttttttoooo '+$scope.fechas);
                     $http.post('rest/grupos/'+$scope.nombre,{"nombre":$scope.nombtarea,"descripcion":$scope.descripcion,"fecha":$scope.fecha,"fechas":$scope.year,"dia":$scope.dia,"month":$scope.month,"year":$scope.year}).
                             success(function (data) {
                                 
