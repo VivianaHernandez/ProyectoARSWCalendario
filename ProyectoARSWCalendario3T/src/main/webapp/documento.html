@@ -95,15 +95,37 @@
 
 <!--------------Content--------------->
 <section id="content">
-	<div class="wrap-content zerogrid" ng-controller="controlador as cn" >
-            
-            <div><button class="btn btn-success"  ng-click="probar()" >probar</button></div>
-                    <textarea ng-model="declaracion" name="mensaje" readonly></textarea><br>
-			<textarea ng-model="declaracion" name="mensaje"></textarea>
-                                                               
-                    <h2>Mi declaración</h2>
+	<div class="wrap-content zerogrid">
+		<div class="row block03">
+			<div class="col-2-1">
+				<div class="wrap-col">
+					<article>
 
-                    <p>{{declaracion}}</p>
+
+	 <div id = "controlId" ng-controller="control as con">
+        
+        <textarea  rows="10" cols="50" ng-model="varia" ></textarea><br>   
+        <textarea rows="10" cols="50" ng-model="mensaje"></textarea><br>
+        <p>key up count: {{count}}</p>
+        <br>
+        <button class="btn btn-primary" ng-click="pos()">Enviar</button>
+          <button class="btn btn-primary" ng-click="consulta()">Consulta</button>
+        <p>Cuenta posicion</p>
+        <input ng-keyup="count = count + 1" ng-init="count=0"> 
+        <p>key up count: {{count}}</p>
+
+        <p>Dice letra</p>
+        <input ng-keyup="event=$event">   
+        <p>event keyCode: {{ event.keyCode }}</p>
+        <textarea id="textareaid"></textare
+        <button ng-click="insertAtCaret('textareaid','text to insert')">Enviar</button>
+
+        </div>
+				</article>
+				</div>
+			</div>
+			
+		</div>
 	</div>
 </section>
 <!--------------Footer--------------->
