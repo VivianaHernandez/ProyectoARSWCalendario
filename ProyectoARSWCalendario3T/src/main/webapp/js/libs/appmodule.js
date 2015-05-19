@@ -10,7 +10,7 @@
                 $scope.nombtarea=""
                 $scope.descripcion = "";
                 
-                $scope.declaracion= "hola";
+                $scope.declaracion= "";
                
                 $scope.tarea = "";
                 this.tarea1="";
@@ -93,6 +93,10 @@
                             error(function (data) {
                                 alert('error');
                             }); 
+                };  
+                
+                 $scope.probar = function () {
+                   alert('entro a probar'+$scope.declaracion);
                 };  
             }
     );
