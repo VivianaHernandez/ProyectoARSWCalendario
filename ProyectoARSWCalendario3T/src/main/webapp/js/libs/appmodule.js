@@ -9,6 +9,8 @@
                 $scope.nombre = ""; 
                 $scope.nombtarea=""
                 $scope.descripcion = "";
+                
+                $scope.declaracion= "hola";
                
                 $scope.tarea = "";
                 this.tarea1="";
