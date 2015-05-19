@@ -1,5 +1,3 @@
-/* global date */
-
 (function () {
     var app = angular.module('modone', []);
 

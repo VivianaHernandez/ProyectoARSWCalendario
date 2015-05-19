@@ -1,6 +1,6 @@
 angular.element(document).ready(function () {
     //Create stomp client over sockJS protocol
-    var socket = new SockJS("/ProyectoARSWCalendario3T/sockets/ws");
+    var socket = new SockJS("/ProyectoARSWCalendario3T/docu    mento/sockets/ws");
     var stompClient = Stomp.over(socket);
    
 
@@ -8,21 +8,21 @@ angular.element(document).ready(function () {
     var connectCallback = function () {
         stompClient.subscribe('/topic/newmessage',
                 function (data) {
-                    
-                    alert('ETNRO AL WEBSCO¡KE=)=)=)=))=)=');
+                   alert('entro a websocket************');
                     console.log("got:" + data);
                     var message = JSON.parse(data.body);
                     console.log("got:" + message.destiny + "," + message.body);
-                   alert('ETNRO AL WEBSCO¡KE');
+                   
                     var controllerElement = document.getElementById("controlId");
                     var controllerScope = angular.element(controllerElement).scope();
                     
                     controllerScope.$apply(function() {
-                        controllerScope.varia= controllerScope.varia+ message.destiny + message.body;
+                        controllerScope.varia= controllerScope.varia + message.destiny + "," + message.body;
                     
                     });
                     
-                
+                    var jsonstr = JSON.stringify({'destiny': 'servidor', 'body':'acuse de recibo' });
+                    stompClient.send("/app/rutaMensajesEntrantes", {}, jsonstr);
                 
                 });
     };
@@ -34,6 +34,6 @@ angular.element(document).ready(function () {
 
     // Connect to server via websocket
     stompClient.connect("guest", "guest", connectCallback, errorCallback);
-});
+});                            
 
 
