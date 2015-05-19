@@ -95,15 +95,29 @@
 
 <!--------------Content--------------->
 <section id="content">
-	<div class="wrap-content zerogrid" ng-controller="controlador as cn" >
-            
-            <div><button class="btn btn-success"  ng-click="probar()" >probar</button></div>
-                    <textarea ng-model="declaracion" name="mensaje" readonly></textarea><br>
-			<textarea ng-model="declaracion" name="mensaje"></textarea>
-                                                               
-                    <h2>Mi declaración</h2>
+	<div class="wrap-content zerogrid">
+		<div class="row block03">
+			<div class="col-2-1">
+				<div class="wrap-col">
+                                    <article>
+                                        <center>
+                                        <div id = "controlId" ng-controller="controlador as con">
 
-                    <p>{{declaracion}}</p>
+                                            <textarea disabled="true" rows="10" cols="50" ng-model="varia" ></textarea><br>   
+
+                                            Destino : <input type="text" name="origen" ng-model="origen"><br>
+
+                                            <textarea rows="10" cols="50" ng-model="mensaje" ></textarea><br>
+                                            <br>
+                                            <button class="btn btn-primary" ng-click="pos()">Enviar</button>
+                                               </center>                                  <center>
+
+                                        </div>
+                                    </article>
+				</div>
+			</div>
+			
+		</div>
 	</div>
 </section>
 <!--------------Footer--------------->

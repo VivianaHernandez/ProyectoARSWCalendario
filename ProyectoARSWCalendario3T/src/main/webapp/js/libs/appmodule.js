@@ -25,6 +25,11 @@
                 $scope.arregloTareas = [];
                 $scope.arreglo = [];
                 
+                  $scope.varia = "";
+            $scope.origen = "";
+            $scope.mensaje ="";
+           
+                
 //-----------------------------------------------------------------------------------------------------//                
 //--------------------------------------------Funciones para consultar---------------------------------//
 //-----------------------------------------------------------------------------------------------------//
@@ -95,9 +100,30 @@
                             }); 
                 };  
                 
-                 $scope.probar = function () {
-                   alert('entro a probar'+$scope.declaracion);
+//-----------------------------------------------------------------------------------------------------//                
+//--------------------------------------------Funciones para websocket---------------------------------//
+//-----------------------------------------------------------------------------------------------------/
+                
+                 $scope.pos =function(){
+              
+                     alert('Entyro');
+                     $http.post('rest/messages' , {"destiny": $scope.origen,"body":$scope.mensaje}).
+                        success(function(){
+                                  alert('origen :'+$scope.origen);
+                                  alert('mensaje: '+$scope.mensaje);
+                }).error(function(){
+                    alert('error');
+                });
+            }; 
+            
+            
+             $scope.cambios= function () {
+                   alert('Hizo cambio');
+                             
                 };  
+                
+                
+                 
             }
     );
 
